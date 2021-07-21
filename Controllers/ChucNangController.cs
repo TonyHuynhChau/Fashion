@@ -19,6 +19,47 @@ namespace Fashion.Controllers
             return View(list.ToPagedList(pageNum, pagesize));
         }
 
+        public ActionResult DSGOPY(int? page)
+        {
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Index", "Fashion");
+            }
+            else
+            {
+                int pagesize = 10;
+                int pageNum = (page ?? 1);
+                var list = context.HoTros.OrderByDescending(s => s.MaKH).ToList();
+                return View(list.ToPagedList(pageNum, pagesize));
+            }
+        }
+
+        public ActionResult GOPY_CHITIET(int id)
+        {
+            HoTro ht = context.HoTros.SingleOrDefault(n => n.MaKH == id);
+            ViewBag.MaKH = ht.MaKH;
+            if(ht == null)
+            {
+                Response.StatusCode = 404;
+                return null;
+            }
+            return View(ht);
+        }
+
+        public ActionResult DSKH(int? page)
+        {
+            if (Session["TKAdmin"] == null)
+            {
+                return RedirectToAction("Index", "Fashion");
+            }
+            else
+            {
+                int pagesize = 10;
+                int pageNum = (page ?? 1);
+                var list = context.KHACHHANGs.OrderByDescending(s => s.MaKH).ToList();
+                return View(list.ToPagedList(pageNum, pagesize));
+            }
+        }
         public ActionResult DSNCC(int? page)
         {
             if (Session["TKAdmin"] == null)

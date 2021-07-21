@@ -1,7 +1,49 @@
 ﻿
 @{ ViewBag.Title = "Contact";
                 Layout = "~/Views/Layout/Contact/_LayoutContact.cshtml"; }
+<style>
+    .fa {
+        text-align: center;
+        font-size: 3em;
+        letter-spacing: 8px;
+        font-weight: 500;
+        font-family: 'Dosis', sans-serif;
+        text-transform: uppercase;
+        text-shadow: 5px 3px 5px #101010;
+    }
+    textarea {
+        margin: 10px 0;
+        outline: none;
+        font-size: .9em;
+        padding: 1em 3em 1em 1em;
+        border: none;
+        margin-bottom: 0.3em;
+        background: rgba(255, 255, 255, 0.85);
+        width: 100%;
+        height: 100px;
+        color: #000;
+        border-radius: 30px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+    }
 
+        textarea:focus {
+            height: 50%;
+            text-align: unset;
+            padding: 15px 15px;
+        }
+
+    .Support {
+        padding-top: 10%;
+    }
+    .in{
+        width: 30%;
+        margin-top: 20px;
+        margin-left: 35%;
+    }
+</style>
 @using (Html.BeginForm())
 {
 <div class="contact-box">
@@ -13,7 +55,7 @@
     <div class="contact-right">
         <div class="right-top">
             <div class="row">
-                <p> <h2 style="margin-left:50px">Thông Tin</h2></p>
+                <p> <h2>Thông Tin</h2></p>
             </div>
             <div class="row">
                 <p><img src="~/Content/images/home.png">Địa Chỉ:123 Đường XXX, Phường YYY, Quận ZZZ, Tp HCM <br></p>
@@ -43,10 +85,23 @@
             <a href="#"><img src="~/Content/images/twitter.png"></a>
             <a href="#"><img src="~/Content/images/instagram.png"></a>
             <div class="clear"></div>
-            <div style="margin-top:50px;" class=back>
+            <div style="margin-top:25px;" class="back">
                 <a class="submit" href="@Url.Action("Index", "Fashion")" style="margin-top: 50px">Back To Home</a>
             </div>
         </div>
     </div>
-</div>}
+</div>
+<div class="clear"></div>
+<div class="Support">
+    <div class="header-w3l">
+        <h1>Đóng Góp Ý Kiến</h1>
+    </div>
+
+    <div class="pom-agile">
+        <textarea placeholder="Ý Kiến Của Các Bạn Là Điều Giúp Chúng Tôi Tốt Hơn Mỗi Ngày" name="LyDo" class="pass" type="text" required=""></textarea>
+        <span class="icon2"><i aria-hidden="true"></i></span>
+        <input class="submit in" type="Submit" value="Gửi">
+    </div>
+</div>
+}
 

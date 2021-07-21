@@ -1,11 +1,35 @@
-﻿@model Fashion.Models.NCC
+﻿@model Fashion.Models.HoTro
 
-@using Fashion.Models
 @{
-    ViewBag.Title = "XoaNCC";
+    ViewBag.Title = "GOPY_CHITIET";
     Layout = "~/Views/Layout/Admin/_LayoutAdmin.cshtml";
 }
 
+<div>
+    <h2 style="text-align: center; font-size:32px;">GÓP Ý CHI TIẾT </h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Họ Tên: ")
+            @Html.DisplayFor(model => model.HoTen)
+        </dt>
+
+        <dt>
+            @Html.DisplayName("Email: ")
+            @Html.DisplayFor(model => model.Email)
+        </dt>
+
+        <dt>
+            @Html.DisplayName("Góp Ý : ")
+            @Html.DisplayFor(model => model.LyDo)
+        </dt>
+
+    </dl>
+</div>
+<a class="btn")
+    @Html.ActionLink("Quay Lại", "DSGOPY")
+</a>
+    
 <style>
     .dl-horizontal {
         width: 60%;
@@ -29,11 +53,12 @@
     }
 
     .btn {
-        margin-left: 8%;
+        margin-top: 20px;
+        margin-left:40%;
         color: white;
         background: #ea2858;
         border: none;
-        padding: .7em 20px;
+        padding:1.7em 85px;
         outline: none;
         width: 20%;
         font-size: 1em;
@@ -156,30 +181,3 @@
             padding: 0.7em 14px;
         }
 </style>
-<h1 style="text-align: center; font-size: 28px;">Bạn Thật Sự Chắc Chắn Muốn Xóa Nhãn Hiệu Này?</h1>
-<hr />
-<div>
-    <h2 style="text-align: center; font-size: 26px;">Thông Tin Nhà Cung Cấp</h2>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayName("Tên Nhãn Hiệu:   ")
-            @Html.DisplayFor(model => model.TenNCC)
-        </dt>
-        <dt>
-            @Html.DisplayName("Địa Chỉ:     ")
-            @Html.DisplayFor(model => model.Diachi)
-        </dt>
-        <dt>
-            @Html.DisplayName("Số Điện Thoại:   ")
-            @Html.DisplayFor(model => model.Dienthoai)
-        </dt>
-    </dl>
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-        <div class="form-actions no-color">
-            <div class="return">@Html.ActionLink("TRỞ VỀ", "DSNCC")</div>
-            <input type="submit" value="XÓA" class="btn btn-default" />
-        </div>
-    }
-</div>

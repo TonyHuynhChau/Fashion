@@ -106,7 +106,15 @@ Go
 	CONSTRAINT FK_MASP FOREIGN KEY (MaSP) REFERENCES SANPHAM(MaSP)
 	--CONSTRAINT FK_MASP FOREIGN KEY (MaSP,MaSize,MaColor) REFERENCES CHITIETSANPHAM(MaSP,MaSize,MaColor)
 )
-
+go
+create table HoTro(
+	MaKH int primary key,
+	Email varchar(100),
+	HoTen nVarchar(50) NOT NULL,
+	LyDo nvarchar(Max) Not null,
+	CONSTRAINT FK_HoTroKhachhang FOREIGN KEY (MaKH) REFERENCES Khachhang(MaKH)
+)
+go
 
 
 INSERT INTO Loaisanpham(Tensanpham)VALUES(N'Quần')

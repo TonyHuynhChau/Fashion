@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 10.625" name="QLBanQuanAo">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.75, 13.5" name="QLBanQuanAo">
   <DataContextMoniker Name="/QLBanQuanAoDataContext" />
   <nestedChildShapes>
     <classShape Id="63ef4270-391b-4cf9-a84f-83a97c5cfbb4" absoluteBounds="6.25, 1.375, 2, 1.5785953776041666">
@@ -79,5 +79,18 @@
         <elementListCompartment Id="07746207-af11-4fbd-9447-2b2318dedf15" absoluteBounds="9.515, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="65b9ec76-116f-455c-bded-3c555795337b" absoluteBounds="0.75, 11.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QLBanQuanAoDataContext/HoTro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a3ed92a-02ac-489a-a6d8-7449cbda2f8e" absoluteBounds="0.76500000000000057, 12.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 10.3478011067708); (1.75 : 11.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QLBanQuanAoDataContext/KHACHHANG/KHACHHANG_HoTro" />
+      <nodes>
+        <classShapeMoniker Id="750fc249-eb70-4579-a3d0-2c49d45f9cbd" />
+        <classShapeMoniker Id="65b9ec76-116f-455c-bded-3c555795337b" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -306,6 +306,9 @@
     <Content Include="Views\ChucNang\SuaNCC.cshtml" />
     <Content Include="Views\ChucNang\ThemNCC.cshtml" />
     <Content Include="Views\ChucNang\XoaNCC.cshtml" />
+    <Content Include="Views\ChucNang\DSKH.cshtml" />
+    <Content Include="Views\ChucNang\DSGOPY.cshtml" />
+    <Content Include="Views\ChucNang\GOPY_CHITIET.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,10 +17,40 @@ namespace Fashion.Controllers
         {     
             return context.SANPHAMs.OrderByDescending(a => a.MaSP).Take(count).ToList();
         }
+        [HttpGet]
         public ActionResult Contact()
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Contact(FormCollection collection)
+        {
+            if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            {
+                return RedirectToAction("Login", "NguoiDung");
+            }
+            else
+            {
+                HoTro ht = new HoTro();
+                KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+                ht.MaKH = kh.MaKH;
+                ht.HoTen = kh.HoTen;
+                ht.Email = kh.Email;
+                string lydo = collection["LyDo"];
+                ht.LyDo = lydo;
+                if (lydo == null)
+                {
+                    return HttpNotFound();
+                }
+                else
+                {
+                    context.HoTros.InsertOnSubmit(ht);
+                    context.SubmitChanges();
+                    return RedirectToAction("Contact", "Fashion");
+                }
+            }           
+        }
+
         public ActionResult Index(int ? page)
         {
             int pagesize = 5;
